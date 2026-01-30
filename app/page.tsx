@@ -1,65 +1,183 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <header>
+        <div className="container">
+          <nav className="nav">
+            <div className="logo-block">
+              {/* Ajusta o caminho do logo para o teu ficheiro real em /public */}
+              <img src="/logo.png" alt="Mocidade Invicta Futebol Clube" className="logo-img" />
+              <div className="logo-area">
+                <span className="logo-title">Mocidade Invicta</span>
+                <span className="logo-sub">Futebol Clube · Porto · desde 1931</span>
+              </div>
+            </div>
+
+            <div className="nav-links">
+              <a href="#sobre">O clube</a>
+              <a href="#quotas">Quotas</a>
+              <Link className="nav-cta" href="/inscricao">
+                Quero ser sócio
+              </Link>
+            </div>
+          </nav>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </header>
+
+      <main>
+        <section className="hero" id="topo">
+          <div className="container hero-inner">
+            <div>
+              <div className="hero-label">
+                <span className="hero-dot" />
+                <span>Campanha de captação de sócios</span>
+              </div>
+
+              <div className="hero-eyebrow">Chamada aos amigos do clube</div>
+
+              <h1 className="hero-title">
+                O Mocidade precisa <span>de ti</span>
+              </h1>
+
+              <p className="hero-subtext">
+                O Mocidade Invicta Futebol Clube é um histórico da cidade do Porto, com mais de 90 anos de vida.
+                Para continuar a escrever esta história, o clube precisa de ti como sócio e como voz ativa na comunidade.
+              </p>
+
+              <div className="hero-bullets">
+                <span className="hero-chip">Inscrição 100% online</span>
+                <span className="hero-chip">Poucos minutos, impacto para muitos anos</span>
+                <span className="hero-chip">Apoia o clube do teu bairro</span>
+              </div>
+
+              <div className="hero-cta-row">
+                <Link className="primary-btn" href="/inscricao">
+                  Quero ser sócio agora <span>→</span>
+                </Link>
+
+                <a className="secondary-link" href="#sobre">
+                  Quero primeiro saber mais
+                </a>
+              </div>
+            </div>
+
+            <aside className="hero-side-card">
+              <div className="hero-side-title">Porque agora?</div>
+
+              <div className="hero-side-highlight">
+                +90 anos <span>de história</span>
+              </div>
+
+              <p className="hero-side-desc">
+                O clube está a renovar-se e a reforçar projetos. Para que esta fase seja sustentável,
+                precisamos de crescer a massa associativa.
+              </p>
+
+              <ul className="hero-side-list">
+                <li>
+                  <span className="hero-side-dot-small" />
+                  <span>Ser sócio dá-te voz nas assembleias e decisões.</span>
+                </li>
+                <li>
+                  <span className="hero-side-dot-small" />
+                  <span>Ajuda direta às equipas e aos projetos do clube.</span>
+                </li>
+                <li>
+                  <span className="hero-side-dot-small" />
+                  <span>Condições especiais em atividades e eventos.</span>
+                </li>
+              </ul>
+
+              <div className="hero-side-footer">
+                <span>
+                  Tempo médio de inscrição: <strong>2 minutos</strong>
+                </span>
+                <span>
+                  <strong>Partilha este link</strong> com amigos do clube.
+                </span>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="sobre">
+          <div className="container">
+            <h2 className="section-title">O clube</h2>
+            <p className="section-subtitle">
+              O Mocidade Invicta Futebol Clube nasceu no coração da cidade do Porto e cresceu com ela.
+              Um clube de bairro, de portas abertas, onde o desporto e o associativismo se cruzam diariamente.
+            </p>
+
+            <div className="about-grid">
+              <div className="card">
+                <p>
+                  Ao longo de décadas, o Mocidade Invicta formou atletas, treinadores, dirigentes e, acima de tudo, pessoas.
+                  Hoje, o clube vive uma fase de renovação e precisa de consolidar a família de sócios para continuar a cumprir a sua missão.
+                </p>
+
+                <p style={{ marginTop: "0.7rem" }}>
+                  Quando te tornas sócio, não estás apenas a apoiar uma equipa. Estás a ajudar a preservar um espaço de convivência,
+                  formação e identidade na cidade do Porto.
+                </p>
+
+                <div className="tag-row">
+                  <span className="tag-pill">Clube histórico</span>
+                  <span className="tag-pill">Cidade do Porto</span>
+                  <span className="tag-pill">Formação</span>
+                  <span className="tag-pill">Comunidade</span>
+                </div>
+              </div>
+
+              <div className="card" id="quotas">
+                <strong style={{ fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#6b7280" }}>
+                  Tabela de quotas (indicativo)
+                </strong>
+
+                <table className="quotas-table">
+                  <thead>
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Idades</th>
+                      <th>Quota mensal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Normal</td>
+                      <td>13+ anos</td>
+                      <td>2 €</td>
+                    </tr>
+                    <tr>
+                      <td>Isento</td>
+                      <td>até 12 anos</td>
+                      <td>0 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p style={{ marginTop: "0.5rem", fontSize: "0.76rem", color: "#6b7280" }}>
+                  Os valores oficiais são definidos em sede própria (assembleia / direção).
+                </p>
+
+                <div style={{ marginTop: "0.9rem", display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+                  <Link className="primary-btn" href="/inscricao">
+                    Quero inscrever-me <span>→</span>
+                  </Link>
+                  <a className="btn-outline" href="#topo">
+                    Voltar ao topo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer>
+        Mocidade Invicta Futebol Clube · Porto · &copy; {new Date().getFullYear()}
+      </footer>
+    </>
   );
 }

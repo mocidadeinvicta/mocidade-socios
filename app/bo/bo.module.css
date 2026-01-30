@@ -1,0 +1,447 @@
+:root {
+    --mi-blue: #0b3c7a;
+    --mi-red: #b91c1c;
+    --mi-gold: #facc15;
+  
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e5e7eb;
+  
+    --shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+    --radius: 16px;
+  }
+  
+  .boShell {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+  /* Evita “herdar” estilos globais em tags sem quereres */
+  .boShell :global(header) {
+    background: transparent !important;
+  }
+  
+  .boTopbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(245, 245, 245, 0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .boTopbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 24px;
+  }
+  
+  .boBrand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  
+  .boBrandTitle {
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  
+  .boBrandSub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  
+  .boNav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .boNavLink {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+  }
+  
+  .boNavLink:hover {
+    border-color: var(--border);
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
+  .boMain {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 26px 24px 44px;
+  }
+  
+  /* Page header */
+  .pageHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  
+  .pageTitle {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  
+  .pageSubtitle {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  
+  /* Buttons */
+  .btnPrimary {
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--mi-red), var(--mi-blue));
+    border: 1px solid var(--mi-gold);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
+  }
+  
+  .btnPrimary:hover { transform: translateY(-1px); }
+  
+  .btnGhost {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 14px;
+    color: var(--text);
+  }
+  
+  .btnGhost:hover { background: #fff; }
+  
+  /* Inputs */
+  .controlsRow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 14px 0 18px;
+  }
+  
+  .input, .select {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+    padding: 10px 12px;
+    font-size: 13px;
+    outline: none;
+    min-width: 240px;
+  }
+  
+  .select { min-width: 180px; }
+  
+  .input:focus, .select:focus {
+    border-color: rgba(11, 60, 122, 0.45);
+    box-shadow: 0 0 0 3px rgba(11, 60, 122, 0.12);
+  }
+  
+  /* Cards / grid */
+  .grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 10px;
+  }
+  
+  .card {
+    grid-column: span 3;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(11, 60, 122, 0.35);
+  }
+  
+  .cardPriority {
+    border-left: 4px solid var(--mi-red);
+  }
+  
+  .cardTitleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .cardTitle {
+    margin: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: var(--muted);
+    font-weight: 800;
+  }
+  
+  .pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    white-space: nowrap;
+    line-height: 1;
+  }
+  
+  .pillRed {
+    border-color: rgba(185, 28, 28, 0.25);
+    background: rgba(185, 28, 28, 0.06);
+    color: var(--mi-red);
+  }
+  
+  .pillGreen {
+    border-color: rgba(22, 163, 74, 0.25);
+    background: rgba(22, 163, 74, 0.08);
+    color: #166534;
+  }
+  
+  .value {
+    font-size: 44px;
+    font-weight: 900;
+    margin: 2px 0 6px;
+  }
+  
+  .desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0;
+  }
+  
+  .cardCtaRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+  }
+  
+  /* Table */
+  .tableWrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  
+  .table th, .table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .table th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: var(--muted);
+    background: rgba(249, 250, 251, 0.9);
+  }
+  
+  .rowLink {
+    color: var(--mi-blue);
+    font-weight: 800;
+    text-decoration: none;
+  }
+  
+  .rowLink:hover {
+    text-decoration: underline;
+  }
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-weight: 800;
+    font-size: 11px;
+    line-height: 1;
+  }
+  
+  .badgeDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--mi-blue);
+  }
+  
+  .badgeRed .badgeDot { background: var(--mi-red); }
+  .badgeGreen .badgeDot { background: #16a34a; }
+  
+  /* Responsive */
+  @media (max-width: 980px) {
+    .card { grid-column: span 6; }
+  }
+  @media (max-width: 560px) {
+    .card { grid-column: span 12; }
+    .pageTitle { font-size: 34px; }
+    .input { min-width: 100%; }
+  }
+
+  /* --- Sócios list refinements --- */
+.trClickable {
+    cursor: pointer;
+  }
+  
+  .trClickable:hover td {
+    background: rgba(255, 255, 255, 0.65);
+  }
+  
+  .trClickable td {
+    transition: background 0.12s ease;
+  }
+  
+  /* Pills mais “clean” e sem estourar layout */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    white-space: nowrap;
+    line-height: 1;
+  }
+  
+  .pillRed {
+    border-color: rgba(185, 28, 28, 0.25);
+    background: rgba(185, 28, 28, 0.06);
+    color: var(--mi-red);
+  }
+  
+  .pillGreen {
+    border-color: rgba(22, 163, 74, 0.25);
+    background: rgba(22, 163, 74, 0.08);
+    color: #166534;
+  }
+  
+  /* Badge opcional (se quiseres diferenciar “a carregar”) */
+  .badgeBlue .badgeDot {
+    background: var(--mi-blue);
+  }
+
+  /* Months grid (Quotas) */
+.monthGrid {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  
+  .monthCell {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    min-height: 54px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .monthCell:hover {
+    border-color: rgba(11, 60, 122, 0.35);
+    transform: translateY(-1px);
+  }
+  
+  .monthCellActive {
+    background: rgba(250, 204, 21, 0.16);
+    border-color: rgba(250, 204, 21, 0.55);
+  }
+  
+  .monthLabel {
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+  
+  .monthStatus {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    line-height: 1;
+  }
+  
+  .monthDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--mi-blue);
+  }
+  
+  .monthStatusOk {
+    border-color: rgba(22, 163, 74, 0.25);
+    background: rgba(22, 163, 74, 0.08);
+    color: #166534;
+  }
+  .monthStatusOk .monthDot { background: #16a34a; }
+  
+  .monthStatusBad {
+    border-color: rgba(185, 28, 28, 0.25);
+    background: rgba(185, 28, 28, 0.06);
+    color: var(--mi-red);
+  }
+  .monthStatusBad .monthDot { background: var(--mi-red); }
+  
+  .monthStatusNeutral {
+    opacity: 0.75;
+  }
+  

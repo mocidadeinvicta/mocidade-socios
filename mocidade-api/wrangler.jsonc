@@ -1,0 +1,19 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "mocidade-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-01-01",
+  
+	"vars": {
+	  "ADMIN_TOKEN": "mifc-admin-2025-mocidadeinvicta1931"
+	},
+  
+	"d1_databases": [
+	  {
+		"binding": "DB",
+		"database_name": "mocidade_socios",
+		"database_id": "05295c6c-6c19-4c13-b062-25a7ee59d277"
+	  }
+	]
+  }
+  

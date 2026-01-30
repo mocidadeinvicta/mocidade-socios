@@ -1,0 +1,130 @@
+.page {
+    padding: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: #0f172a;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .title {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .subtitle {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #64748b;
+  }
+  
+  .refresh {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    background: #0b3c7a; /* azul Mocidade */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .refresh:hover {
+    opacity: 0.9;
+  }
+  
+  /* SUMMARY */
+  .summary {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 28px;
+  }
+  
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  /* CARD */
+  .card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e7eb;
+    transition: all 0.15s ease;
+  }
+  
+  .card:hover {
+    border-color: #0b3c7a;
+    transform: translateY(-2px);
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .value {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 12px 0 4px;
+  }
+  
+  .desc {
+    font-size: 13px;
+    color: #64748b;
+  }
+  
+  /* PRIORITY */
+  .priority {
+    border-left: 4px solid #b91c1c; /* vermelho Mocidade */
+  }
+  
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: #b91c1c;
+  }
+  
+  /* FLOW */
+  .flow {
+    font-size: 14px;
+    color: #475569;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
